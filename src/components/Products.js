@@ -27,7 +27,7 @@ export class Products extends Component {
           </div>
           <div className="products-items">
             {this.props.products.map(product => (
-              <ProductItem product={product} />
+              <ProductItem key={product.id} product={product} />
             ))}
           </div>
         </div>
