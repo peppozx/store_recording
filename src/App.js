@@ -1,23 +1,30 @@
 import React from "react";
 
-//Components
-import Header from "./components/Header";
-import Products from "./components/Products";
+import Home from "./components/Home";
+import Cart from "./components/Cart";
+
+//Router
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //Redux
 import { Provider } from "react-redux";
 import store from "./store";
-
-//Products
-import { storeProducts } from "./data";
 
 class App extends React.Component {
   render() {
     return (
       <div className="container">
         <Provider store={store}>
-          <Header />
-          <Products products={storeProducts} />
+          <Router>
+            <Switch>
+              <Route path="/" exact={true}>
+                <Home />
+              </Route>
+              <Route path="/cart">
+                <Cart />
+              </Route>
+            </Switch>
+          </Router>
         </Provider>
       </div>
     );

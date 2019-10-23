@@ -6,19 +6,23 @@ const INITIAL_STATE = {
 function commerce(state = INITIAL_STATE, action) {
   switch (action.type) {
     case "SET_PRODUCTS":
-      console.log("setting products");
-      console.log(action.products);
-      break;
       return {
         ...state,
         products: [...action.products]
       };
     case "ADD_TO_CART":
-      console.log("adding to cart");
       return {
         ...state,
-        cart: state.cart.push(action.product)
+        cart: [...state.cart, action.product]
       };
+    case "REMOVE_FROM_CART":
+      return {
+        ...state,
+        cart: [
+          ...state.cart.filter(product => product.id !== action.product.id)
+        ]
+      };
+      break;
   }
   return state;
 }
