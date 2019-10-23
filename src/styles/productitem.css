@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+.product-item {
+  flex: 0 0 45%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: yellow;
+  margin: 3px 3px;
+  font-family: Montserrat;
+  font-weight: 500;
+}
+
+.product-item p {
+  flex: 0 0 100%;
+  text-align: center;
+}
+
+.product-img {
+  max-width: 100%;
+  padding: 10px 10px;
+}
