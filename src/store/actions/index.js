@@ -18,3 +18,9 @@ export function removeFromCart(product) {
     product
   };
 }
+export function removeFromCartAll(product) {
+  return {
+    type: "REMOVE_FROM_CART_ALL",
+    product
+  };
+}

@@ -62,6 +62,11 @@ function commerce(state = INITIAL_STATE, action) {
         cart: [...decrementInCart(action.product, state)]
       };
       break;
+    case "REMOVE_FROM_CART_ALL":
+      return {
+        ...state,
+        cart: [...state.cart.filter(item => item.id !== action.product.id)]
+      };
   }
   return state;
 }
